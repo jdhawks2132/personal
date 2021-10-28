@@ -1,0 +1,160 @@
+$colors: (
+	primary: #262626,
+	primary-light: lighten(#262626, 40%),
+	primary-dark: darken(#262626, 40%),
+	primary-lightest: lighten(#262626, 60%),
+	accent: rgb(182, 5, 5),
+);
+
+$padding: 15px;
+$borders: 15px;
+
+@function color($color-name) {
+	@return map-get($colors, $color-name);
+}
+
+body,
+html {
+	height: 100vh;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+	margin: 0;
+	display: grid;
+	// grid-row-gap: 10px;
+	grid-template-columns: auto 27% 27% 27%;
+	grid-template-rows: 10% auto auto 10%;
+	grid-template-areas:
+		'logo    header header header'
+		'sidebar sect1  sect2  sect2'
+		'sidebar main   main   main'
+		'sidebar footer footer footer';
+}
+
+#logoCont {
+	grid-area: logo;
+	background-color: color(primary);
+
+	#header-logo {
+		width: 100px;
+		padding: 30px;
+	}
+}
+
+aside {
+	grid-area: sidebar;
+	background-color: color(primary-light);
+	align-content: center;
+	justify-content: center;
+
+	#followMe {
+		padding: $padding;
+	}
+
+	#contacts li {
+		list-style-type: none;
+		font-size: 1.5em;
+		padding: $padding;
+		text-decoration: none;
+		color: black;
+	}
+}
+
+#contacts li a {
+	text-decoration: none;
+	color: rgb(177, 22, 22);
+}
+
+header {
+	grid-area: header;
+	background-color: color(primary);
+	align-content: start;
+	justify-content: start;
+
+	#textLogo {
+		font-weight: 300;
+		color: white;
+		text-align: start;
+		text-justify: center;
+		padding-left: 50px;
+
+		#bigHawks {
+			font-weight: 800;
+		}
+	}
+}
+
+#bigHawks:hover {
+	color: rgb(167, 30, 30);
+	transition: 0.3s;
+}
+
+#feat1 {
+	grid-area: sect1;
+	background-color: color(primary-lightest);
+
+	#joshHawks {
+		width: 225px;
+		margin-top: 20px;
+		margin-left: 20px;
+		border-radius: $borders;
+		box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+	}
+}
+
+#feat2 {
+	grid-area: sect2;
+	background-color: color(primary-lightest);
+
+	#banner {
+		margin-top: 15px;
+		width: 600px;
+	}
+}
+
+main {
+	grid-area: main;
+	background-color: white;
+
+	#mainContainer {
+		margin: 0;
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-areas: 'bio1 bio2  bio3';
+	}
+
+	#bio {
+		grid-area: bio1;
+		padding: $padding;
+	}
+
+	#bio2 {
+		grid-area: bio2;
+		padding: $padding;
+		margin-top: 50px;
+	}
+
+	#bio3 {
+		grid-area: bio3;
+	}
+
+	#kitties {
+		margin-top: 50px;
+		margin-left: 30px;
+		height: 300px;
+		border-radius: $borders;
+		align-self: center;
+		justify-self: center;
+		box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+	}
+}
+
+footer {
+	grid-area: footer;
+	text-align: center;
+	text-justify: center;
+	color: color(primary-lightest);
+	background-color: color(primary);
+	padding: $padding;
+}

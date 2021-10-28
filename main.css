@@ -1,0 +1,183 @@
+body,
+html {
+  height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  margin: 0;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto 27% 27% 27%;
+      grid-template-columns: auto 27% 27% 27%;
+  -ms-grid-rows: 10% auto auto 10%;
+      grid-template-rows: 10% auto auto 10%;
+      grid-template-areas: 'logo    header header header' 'sidebar sect1  sect2  sect2' 'sidebar main   main   main' 'sidebar footer footer footer';
+}
+
+#logoCont {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: logo;
+  background-color: #262626;
+}
+
+#logoCont #header-logo {
+  width: 100px;
+  padding: 30px;
+}
+
+aside {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 3;
+  -ms-grid-column: 1;
+  grid-area: sidebar;
+  background-color: #8c8c8c;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+aside #followMe {
+  padding: 15px;
+}
+
+aside #contacts li {
+  list-style-type: none;
+  font-size: 1.5em;
+  padding: 15px;
+  text-decoration: none;
+  color: black;
+}
+
+#contacts li a {
+  text-decoration: none;
+  color: #b11616;
+}
+
+header {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 3;
+  grid-area: header;
+  background-color: #262626;
+  -ms-flex-line-pack: start;
+      align-content: start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+}
+
+header #textLogo {
+  font-weight: 300;
+  color: white;
+  text-align: start;
+  text-justify: center;
+  padding-left: 50px;
+}
+
+header #textLogo #bigHawks {
+  font-weight: 800;
+}
+
+#bigHawks:hover {
+  color: #a71e1e;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+#feat1 {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: sect1;
+  background-color: #bfbfbf;
+}
+
+#feat1 #joshHawks {
+  width: 225px;
+  margin-top: 20px;
+  margin-left: 20px;
+  border-radius: 15px;
+  -webkit-box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+#feat2 {
+  -ms-grid-row: 2;
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 2;
+  grid-area: sect2;
+  background-color: #bfbfbf;
+}
+
+#feat2 #banner {
+  margin-top: 15px;
+  width: 600px;
+}
+
+main {
+  -ms-grid-row: 3;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 3;
+  grid-area: main;
+  background-color: white;
+}
+
+main #mainContainer {
+  margin: 0;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-areas: 'bio1 bio2  bio3';
+}
+
+main #bio {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: bio1;
+  padding: 15px;
+}
+
+main #bio2 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: bio2;
+  padding: 15px;
+  margin-top: 50px;
+}
+
+main #bio3 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+  grid-area: bio3;
+}
+
+main #kitties {
+  margin-top: 50px;
+  margin-left: 30px;
+  height: 300px;
+  border-radius: 15px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  -webkit-box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+footer {
+  -ms-grid-row: 4;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 3;
+  grid-area: footer;
+  text-align: center;
+  text-justify: center;
+  color: #bfbfbf;
+  background-color: #262626;
+  padding: 15px;
+}
+/*# sourceMappingURL=main.css.map */
